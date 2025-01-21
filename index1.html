@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Page</title>
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Include jQuery UI CSS for Datepicker -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- Include jQuery UI JS for Datepicker -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- Include Slick Carousel CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+    <!-- Include Lightbox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
+    <!-- Additional Styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            width: 80%;
+            margin: 30px auto;
+        }
+
+        .carousel img {
+            width: 100%;
+        }
+
+        /* Gallery Styles */
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .gallery a {
+            width: 200px;
+            height: 150px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Datepicker Section -->
+    <label for="datepicker">Choose a date:</label>
+    <input type="text" id="datepicker" placeholder="Select a date">
+    <br><br>
+
+    <!-- Slick Carousel Section -->
+    <div class="carousel">
+        <div><img src="dragon-ball-z-goku-5k-5120x2880-19865.jpg" alt="Image 1"></div>
+        <div><img src="son-goku-shenron-5120x2880-19885.jpg" alt="Image 2"></div>
+        <div><img src="sung-jinwoo-dagger-3840x2743-14605.jpg" alt="Image 3"></div>
+    </div>
+
+    <!-- Lightbox Gallery Section -->
+    <div class="gallery">
+        <a href="dragon-ball-z-goku-5k-5120x2880-19865.jpg" data-lightbox="gallery" data-title="Image 1">
+            <img src="dragon-ball-z-goku-5k-5120x2880-19865.jpg" alt="Image 1">
+        </a>
+        <a href="son-goku-shenron-5120x2880-19885.jpg" data-lightbox="gallery" data-title="Image 2">
+            <img src="son-goku-shenron-5120x2880-19885.jpg" alt="Image 2">
+        </a>
+        <a href="sung-jinwoo-dagger-3840x2743-14605.jpg" data-lightbox="gallery" data-title="Image 3">
+            <img src="sung-jinwoo-dagger-3840x2743-14605.jpg" alt="Image 3">
+        </a>
+    </div>
+
+    <!-- jQuery UI Datepicker Initialization Script -->
+    <script>
+        $(document).ready(function() {
+            // Initialize the jQuery UI Datepicker
+            $("#datepicker").datepicker({
+                numberOfMonths: 1,
+                changeYear: true,
+                changeMonth: true,
+                showWeek: true,
+                weekHeader: "wk no.",
+                showOtherMonths: true,
+                minDate: new Date(2021, 0, 1),
+                maxDate: new Date(2028, 11, 31)
+            });
+
+            // Initialize Slick Carousel
+            $('.carousel').slick({
+                dots: true,  // Show dots navigation
+                infinite: true,  // Infinite loop
+                speed: 500,  // Slide speed
+                fade: true,  // Smooth fade transition
+                cssEase: 'linear'  // Linear transition effect
+            });
+        });
+    </script>
+
+    <!-- Lightbox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+</body>
+</html>
